@@ -10,23 +10,15 @@ import kotlinx.coroutines.launch
 class AllTasksViewModel(private val repositoryImpl: TasksRepositoryImpl) :
     ViewModel() {
 
-
     var tasks = repositoryImpl.watchAllTasks()
-
-
     fun updateTask(i: Int, s: Boolean) {
-
 
         viewModelScope.launch(Dispatchers.IO) {
             val tasks = repositoryImpl.getAllTasks()
-
             val task: TaskDto = tasks[i].copy(
                 status = s
             )
-
             repositoryImpl.updateTask(task)
         }
-
-
     }
 }

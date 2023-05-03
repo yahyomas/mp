@@ -12,7 +12,6 @@ import org.koin.dsl.module
 
 
 class MyApp : Application() {
-
     override fun onCreate() {
         super.onCreate()
         val db = TasksDataBase.getDatabase(this@MyApp)
@@ -33,5 +32,4 @@ class MyApp : Application() {
             )
         }
     }
-
 }

@@ -2,7 +2,6 @@ package com.example.mp.data.datasources
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
-import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
@@ -20,9 +19,6 @@ interface TasksDao {
 
     @Insert
     fun insert(todos: TaskDto)
-
-    @Delete
-    fun delete(todo: TaskDto)
 
     @Update
     fun update(note: TaskDto)
